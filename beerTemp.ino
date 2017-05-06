@@ -15,11 +15,11 @@ const int READING_INTERVAL_MILLIS = 5000;
 const byte RELAY_PIN = 3;
 const float TEMP_SPREAD = 0.05;
 
-Button* button[] = { new AnalogButton(0, 0, 50, DEBOUNCE_MILLIS, REPEAT_INITIAL_DELAY_MILLIS, REPEAT_DELAY_MILLIS, handleClickRight, handleRelease),
-                     new AnalogButton(0, 50, 195, DEBOUNCE_MILLIS, REPEAT_INITIAL_DELAY_MILLIS, REPEAT_DELAY_MILLIS, handleClickUp, handleRelease),
-                     new AnalogButton(0, 195, 380, DEBOUNCE_MILLIS, REPEAT_INITIAL_DELAY_MILLIS, REPEAT_DELAY_MILLIS, handleClickDown, handleRelease),
-                     new AnalogButton(0, 380, 555, DEBOUNCE_MILLIS, REPEAT_INITIAL_DELAY_MILLIS, REPEAT_DELAY_MILLIS, handleClickLeft, handleRelease),
-                     new AnalogButton(0, 555, 790, DEBOUNCE_MILLIS, REPEAT_INITIAL_DELAY_MILLIS, REPEAT_DELAY_MILLIS, handleClickSelect, handleRelease)
+Button* button[] = { new AnalogButton(0, 0, 50, DEBOUNCE_MILLIS, REPEAT_INITIAL_DELAY_MILLIS, REPEAT_DELAY_MILLIS, &handleClickRight, &handleRelease),
+                     new AnalogButton(0, 50, 195, DEBOUNCE_MILLIS, REPEAT_INITIAL_DELAY_MILLIS, REPEAT_DELAY_MILLIS, &handleClickUp, &handleRelease),
+                     new AnalogButton(0, 195, 380, DEBOUNCE_MILLIS, REPEAT_INITIAL_DELAY_MILLIS, REPEAT_DELAY_MILLIS, &handleClickDown, &handleRelease),
+                     new AnalogButton(0, 380, 555, DEBOUNCE_MILLIS, REPEAT_INITIAL_DELAY_MILLIS, REPEAT_DELAY_MILLIS, &handleClickLeft, &handleRelease),
+                     new AnalogButton(0, 555, 790, DEBOUNCE_MILLIS, REPEAT_INITIAL_DELAY_MILLIS, REPEAT_DELAY_MILLIS, &handleClickSelect, &handleRelease)
 };
 
 // Setup a oneWire instance to communicate with any OneWire devices (not just Maxim/Dallas temperature ICs)
